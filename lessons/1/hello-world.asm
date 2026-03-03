@@ -3,14 +3,14 @@ section .text
 global _start
 
 _start:
-    mov     eax, 4      ; parameter: function id: 4=print
-    mov     ebx, 1      ; parameter: device: 1=stdout
-    mov     ecx, msg    ; parameter: address to print
-    mov     edx, len    ; parameter: number of bytes to print
-    int     0x80        ; kernel call
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, msg
+    mov     edx, len
+    int     0x80
 
-    mov     eax, 1      ; parameter: function: 1=exit
-    int     0x80        ; kernel call
+    mov     eax, 1
+    int     0x80
 
 section .data
     msg     db  "Hello from Assembly!", 0x0d, 0x0a
